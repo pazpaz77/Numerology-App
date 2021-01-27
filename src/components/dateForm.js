@@ -1,47 +1,83 @@
 import React from 'react';
 import { Button, Col, Form } from 'react-bootstrap';
+import './dateForm.css' ;
 
 class DateForm extends React.Component {
     constructor(props) {
     super(props);
     this.state = {
-        idCounter: 1,
-        itemList:[] ,
+        dayValue: 1,
+        monthValue: 1,
+        yearValue: 2021,
       };
+    this.newDayInput=this.newDayInput.bind(this);
+    this.newMonthInput=this.newMonthInput.bind(this);
+    this.newYearInput=this.newYearInput.bind(this);
+    this.submitDate=this.submitDate.bind(this);
+    }
 
+    newDayInput (event)  {
+        this.setState({ 
+            dayValue: event.target.value});
     }
     
+    newMonthInput (event)  {
+        this.setState({ 
+            monthValue: event.target.value});
+    }
+
+    newYearInput (event)  {
+        this.setState({ 
+            yearValue: event.target.value});
+    }
+    
+    //yaron
+    submitDate () {
+        this.props.handleDate(this.state.yearValue,this.state.monthValue, this.state.dayValue);
+    }
+
+    // move year submit info to home page
+    submitYear () {
+        this.props.sumYearDigits(this.state.yearValue);
+    }
+
     render() {
 
         const yearOptions = [];
         for (let i = 2022; i > 1900; i--) {
-            const option = <option value = {i} >{i}</option>
+            const option = <option key = {i} value = {i} >{i}</option>
             yearOptions.push(option)
         }
 
         const dayOptions = [];
         for (let i = 1; i < 32; i++) {
-            const option = <option value = {i}> {i}</option>
+            const option = <option key = {i} value = {i}> {i}</option>
             dayOptions.push(option)
         }
+        console.log(this.state.yearValue);
 
+      
 
         return (
-                <div className="c-date-form">
+            <div className="c-date-form">
 
-                    <Form>
-                        <h5>Enter your date of birth</h5>
-                        <Form.Row>
+                <Form>
+                    <h5>Enter your date of birth</h5>
+                    <Form.Row>
                         <Form.Group as={Col} controlId="formGridCity" type="date">
                         <Form.Label>Day</Form.Label>
-                        <Form.Control as="select" defaultValue="Choose...">
+                        <Form.Control as="select" 
+                                      defaultValue={this.state.dayValue}
+                                      onChange={this.newDayInput}>
                             {dayOptions}
                         </Form.Control>
                         </Form.Group>
 
                         <Form.Group as={Col} controlId="formGridState">
                         <Form.Label>Month</Form.Label>
-                        <Form.Control as="select" defaultValue="Choose...">
+                        <Form.Control as="select" 
+                            defaultValue={this.state.monthValue}
+                            onChange={this.newMonthInput}>
                             <option value="1">January</option>
                             <option value="2">February</option>
                             <option value="3">March</option>
@@ -51,16 +87,18 @@ class DateForm extends React.Component {
                             <option value="7">July</option>
                             <option value="8">August</option>
                             <option value="9">September</option>
-                            <option value="10">October</option>
-                            <option value="11">November</option>
-                            <option value="12">December</option>
+                            <option value="1">October</option>
+                            <option value="2">November</option>
+                            <option value="3">December</option>
 
                         </Form.Control>
                         </Form.Group>
 
                         <Form.Group as={Col} controlId="formGridZip">
                         <Form.Label>Year</Form.Label>
-                        <Form.Control as="select" defaultValue="Choose...">
+                        <Form.Control as="select" 
+                            defaultValue={this.state.yearValue}
+                            onChange={this.newYearInput}>
                             {yearOptions}
 
                         </Form.Control>
@@ -68,11 +106,11 @@ class DateForm extends React.Component {
                     </Form.Row>
 
                    
-                    <Button variant="primary" type="submit">
+                    <Button onClick={this.submitDate} variant="primary" type="button">
                         Submit
                     </Button>
                     </Form>
-
+                    {/* <div>{this.submitYear()}</div> */}
                 </div>
         )
     }

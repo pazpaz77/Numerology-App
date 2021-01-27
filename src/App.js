@@ -8,14 +8,19 @@ import PersonalPage from './pages/PersonalPage';
 import SignupPage from './pages/SignupPage';
 import LoginPage from './pages/LoginPage';
 import { Container, Nav, Navbar } from 'react-bootstrap';
+import yearForecastData from './data/Personalyear.json';
+
 
 class App extends React.Component {
   constructor(props) {
   super(props);
+  this.state = {
+        yearForecastData: yearForecastData,
+  }
   }
   
   render() {
-
+        console.log(yearForecastData);
   return (
     // <div className="App">
     //   <h1></h1>
