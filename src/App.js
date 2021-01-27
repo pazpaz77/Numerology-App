@@ -8,7 +8,7 @@ import PersonalPage from './pages/PersonalPage';
 import SignupPage from './pages/SignupPage';
 import LoginPage from './pages/LoginPage';
 import { Container, Nav, Navbar } from 'react-bootstrap';
-import yearForecastData from './data/Personalyear.json';
+import yearForecastData from './data/Personalyear.js';
 
 
 class App extends React.Component {
@@ -43,7 +43,7 @@ class App extends React.Component {
     </Navbar>
     <Container>
           <Route exact path="/">
-                  <HomePage />
+                  <HomePage  yearForecastData = {this.state.yearForecastData} />
           </Route>
 
           <Route exact path="/forecast">

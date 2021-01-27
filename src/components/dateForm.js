@@ -33,13 +33,10 @@ class DateForm extends React.Component {
     
     //yaron
     submitDate () {
-        this.props.handleDate(this.state.yearValue,this.state.monthValue, this.state.dayValue);
+        this.props.sumDateDigits(this.state.yearValue,this.state.monthValue, this.state.dayValue);
     }
 
-    // move year submit info to home page
-    submitYear () {
-        this.props.sumYearDigits(this.state.yearValue);
-    }
+    
 
     render() {
 
@@ -54,7 +51,6 @@ class DateForm extends React.Component {
             const option = <option key = {i} value = {i}> {i}</option>
             dayOptions.push(option)
         }
-        console.log(this.state.yearValue);
 
       
 
