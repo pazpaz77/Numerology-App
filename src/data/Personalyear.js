@@ -1,8 +1,8 @@
 const predictions = [
   {
     "id": "py1",
-    "pytext": `This is a brand new beginning for you! Last year you completed a 9 year cycle. You most likely let go of some people and circumstances in your life, and now is time to plant seeds and embark upon new adventures.
-    This is a wonderful time to do anything you have wanted to do but have been making excuses for. Now is the time to take action and be bold! This is not a time to wait and think about things, it is a time to do!
+    "pytext": `This is a brand new beginning for you! Last year you completed a 9 year cycle.\n You most likely let go of some people and circumstances in your life, and now is time to plant seeds and embark upon new adventures.\n
+    This is a wonderful time to do anything you have wanted to do but have been making excuses for. Now is the time to take action and be bold! This is not a time to wait and think about things, it is a time to do!\n
     You will have a lot of energy now, so do some form of physical exercise daily, otherwise you might experience nervous tension in your body or mind. Starting something new takes confidence. Believe in yourself. This Universe is helping you break out of your comfort zone and take your life to a new level!
     Remember, you're number 1, so it's time to put yourself first. Any area of your life where you've been taking the back seat, you'll want to take back your power. You deserve only the best!
     `

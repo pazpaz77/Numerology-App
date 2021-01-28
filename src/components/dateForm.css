@@ -1,4 +1,12 @@
 .c-date-form {
-    margin-top: 100px;
+    margin-top: 40px;
+    background-color:rgb(177, 117, 117);
+    padding: 20px;
 
 }
+
+h6 {
+    color: rgb(41, 41, 41);
+    margin-bottom: 20px;
+}
+

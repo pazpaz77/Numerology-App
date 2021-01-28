@@ -1,5 +1,7 @@
 import React from 'react';
+import { Jumbotron } from 'react-bootstrap';
 import DateForm from '../components/dateForm';
+import './HomePagey.css';
 
 class HomePage extends React.Component {
     constructor(props) {
@@ -9,7 +11,8 @@ class HomePage extends React.Component {
         fullDateSum: 0,
         monthSum: 0,
         daySum: 0,
-        monthDaySum: 0,
+        monthDaySum: "",
+        headerText:"",
       };
 
     //   this.fullDateDigits=this.fullDateDigits.bind(this);
@@ -31,8 +34,10 @@ class HomePage extends React.Component {
         let monthDayValue = monthValue + dayValue;
 
         // day + month digits
-        let sumDM = 0;
-        while (monthDayValue) {
+        let sumDM = 5;
+
+        // debugger
+        while (monthDayValue > 10) {
             sumDM += monthDayValue % 10;
             monthDayValue = Math.floor(monthDayValue / 10);
         }
@@ -50,13 +55,16 @@ class HomePage extends React.Component {
         this.setState({ 
         yearSum: sumY,
         monthDaySum: sumDM,
+        headerText: "Your Personal Year number is  "
     });
         
     }
 
     render() {
         //logic if 1-9
+
         let forecastText = "";
+
         if (this.state.monthDaySum == 1) {
          forecastText = this.props.yearForecastData[0].pytext;
         }
@@ -81,23 +89,31 @@ class HomePage extends React.Component {
          else if (this.state.monthDaySum == 8) {
             forecastText = this.props.yearForecastData[7].pytext;
          }
+
          else if (this.state.monthDaySum == 9) {
             forecastText = this.props.yearForecastData[8].pytext;
-         }
-         else 
-            forecastText = this.props.yearForecastData[9].pytext;
-         }
-        }
+         } 
+         
+         
         
+
     
         return (
-            <div>
-                <div className="c-home-page">Homepage</div>
+            <div c-home-page>
+                {/* <div className="">Homepage</div> */}
+                <Jumbotron><h4>Find your Personal Year number</h4>
+                
                 <DateForm 
-                   
-                    sumDateDigits={this.sumDateDigits}/>
-                <div>sum year digits {this.state.yearSum}, <br>
-                </br>sum month+day digits {this.state.monthDaySum} 666 {forecastText}</div>
+                    sumDateDigits={this.sumDateDigits} yearForcast={this.forecastText}/>
+
+                </Jumbotron>
+
+                <h5>{this.state.headerText} {this.state.monthDaySum} </h5>
+                <p>{forecastText}</p>
+                {/* <div>sum year digits {this.state.yearSum}, <br> 
+                </br>sum month+day digits {this.state.monthDaySum} 666 {forecastText}</div> */}
+                <p></p>
+                <div></div>
             </div>
         )
     }

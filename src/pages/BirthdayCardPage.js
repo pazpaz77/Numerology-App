@@ -1,19 +1,25 @@
 import React from 'react';
-import { Button, Col, Form } from 'react-bootstrap';
-import './dateForm.css' ;
+import { Button, Col, Form, Row } from 'react-bootstrap';
 
-class DateForm extends React.Component {
+class BirthdayCardPage extends React.Component {
     constructor(props) {
     super(props);
     this.state = {
         dayValue: 1,
         monthValue: 1,
-        yearValue: 2021,
+        monthDaySum: "",
+        cardHeaderText:"",
+        cardMainText:"",
+        cardForecastHeaderText:"",
+    
       };
+
     this.newDayInput=this.newDayInput.bind(this);
     this.newMonthInput=this.newMonthInput.bind(this);
     this.newYearInput=this.newYearInput.bind(this);
-    this.submitDate=this.submitDate.bind(this);
+    // this.submitDate=this.submitDate.bind(this);
+
+    
     }
 
     newDayInput (event)  {
@@ -30,14 +36,11 @@ class DateForm extends React.Component {
         this.setState({ 
             yearValue: event.target.value});
     }
-    
-    //yaron
-    submitDate () {
-        this.props.sumDateDigits(this.state.yearValue,this.state.monthValue, this.state.dayValue);
-    }
 
+    // submitDate () {
+    //     this.props.sumDateDigits(this.state.yearValue,this.state.monthValue, this.state.dayValue);
+    // }
     
-
     render() {
 
         const yearOptions = [];
@@ -52,13 +55,12 @@ class DateForm extends React.Component {
             dayOptions.push(option)
         }
 
-      
 
         return (
-            <div className="c-date-form">
-
+                <div className="c-home-forecast-page">Birthday Card Page
+                
                 <Form>
-                    <h6>Enter your date of birth</h6>
+                    <h6>Enter person date of birth</h6>
                     <Form.Row>
                         <Form.Group as={Col} controlId="formGridCity" type="date">
                         <Form.Label>Day</Form.Label>
@@ -91,24 +93,38 @@ class DateForm extends React.Component {
                         </Form.Group>
 
                         <Form.Group as={Col} controlId="formGridZip">
-                        <Form.Label>Year</Form.Label>
-                        <Form.Control as="select" 
-                            defaultValue={this.state.yearValue}
-                            onChange={this.newYearInput}>
-                            {yearOptions}
+                            <Form.Label>Year</Form.Label>
+                            <Form.Control as="select" 
+                                defaultValue={this.state.yearValue}
+                                onChange={this.newYearInput}>
+                                {yearOptions}
 
-                        </Form.Control>
+                            </Form.Control>
                         </Form.Group>
-                    </Form.Row>
+                        </Form.Row>
+            
+                        <Form.Row>
+                            <Form.Group as={Col} controlId="exampleForm.ControlTextarea1">
+                                <Form.Label>Add card header text</Form.Label>
+                                <Form.Control type = "text" />
+                            </Form.Group>
+                        </Form.Row>
 
-                    {/* {this.props.forecastText}  */}
-                    <Button onClick={this.submitDate} variant="secondary" type="button">
-                        Submit
+                        <Form.Row>
+                            <Form.Group as={Col} controlId="exampleForm.ControlTextarea1">
+                                <Form.Label>Add personal Birthday text</Form.Label>
+                                <Form.Control as="textarea" rows={3} />
+                            </Form.Group>
+                        </Form.Row>
+
+                    <Button onClick={this.submitDate} variant="danger" type="button">
+                        Creat Card
                     </Button>
                     </Form>
-                    {/* <div>{this.submitYear()}</div> */}
+                
+                
                 </div>
         )
     }
 }
-export default DateForm;
+export default BirthdayCardPage;

@@ -9,6 +9,7 @@ import SignupPage from './pages/SignupPage';
 import LoginPage from './pages/LoginPage';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import yearForecastData from './data/Personalyear.js';
+import BirthdayCardPage from './pages/BirthdayCardPage';
 
 
 class App extends React.Component {
@@ -30,23 +31,27 @@ class App extends React.Component {
       
     
       <Navbar bg="light" expand="lg">
-  <     Navbar.Brand href="#home">Numerology-App</Navbar.Brand>
+  <     Navbar.Brand href="#home">My Numerology</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
             <Nav.Link href="/#/">Home</Nav.Link>
-            <Nav.Link href="/#/forecast">Forecast</Nav.Link>
+            <Nav.Link href="/#/birthdayCard">Create a Birthday Card</Nav.Link>
 
           </Nav>
     
     </Navbar.Collapse>
     </Navbar>
-    <Container>
+    <Container className="app-container">
           <Route exact path="/">
                   <HomePage  yearForecastData = {this.state.yearForecastData} />
           </Route>
 
-          <Route exact path="/forecast">
+          <Route exact path="/birthdayCard">
+                  <BirthdayCardPage yearForecastData = {this.state.yearForecastData} />
+          </Route>
+
+          {/* <Route exact path="/forecast">
                   <ForecastPage />
           </Route>
 
@@ -60,7 +65,7 @@ class App extends React.Component {
 
           <Route exact path="/login">
                   <LoginPage />
-          </Route>
+          </Route> */}
           
       </Container>
     </HashRouter>
