@@ -12,7 +12,8 @@ class HomePage extends React.Component {
         monthSum: 0,
         daySum: 0,
         monthDaySum: "",
-        headerText:"",
+        personalYearHeader:"",
+        lifePathHeader:"",
       };
 
     }
@@ -32,47 +33,58 @@ class HomePage extends React.Component {
         let dayValue = parseInt(day);
         let monthDayValue = monthValue + dayValue;
 
-        // day + month digits
-        
-        // debugger
-        // לבדוק נוסחא
-        // function sumDigits(n) {
-        let sumDM = 0;
+        // *** sum day + month digits *** //
+
+        let sumDM = 5; 
         let digit = 0;
         while (monthDayValue) {
         digit = monthDayValue % 10;
         sumDM += digit;
         monthDayValue = (monthDayValue - digit) / 10;
         }
-        let sumi = sumDM;
-        if (sumi >= 10) {
-            sumi = sumi % 9;
+        let newSumDM = sumDM;
+        if (newSumDM >= 10) {
+            newSumDM = newSumDM % 9;
         }
         
-        console.log(sumi);
+        
+        // *** sum year digits *** //
 
-                // נוסחא קודמת
-
-                // let sumDM = 5;
-                // while (monthDayValue > 0) {
-                //     sumDM += monthDayValue % 10;
-                //     monthDayValue = Math.floor(monthDayValue / 10);
-                // }
-
-
-        // sum year digits
         let yearValue = parseInt(year);
         let sumY = 0;
-        while (yearValue > 0) {
-            sumY += yearValue % 10;
-            yearValue = Math.floor(yearValue / 10);
+        let digitY = 0;
+        while (yearValue) {
+            digitY = yearValue % 10;
+            sumY += digitY;
+            yearValue = (yearValue - digitY) / 10;
         }
-        // console.log(this.props.yearForecastData)
+        let newSumY = sumY;
+        if (newSumY >= 10) {
+            newSumY = newSumY % 9;
+        }
+
+        // *** sum full date digits *** //
+        let sumFull = newSumY + newSumY;
+        let digitFull = 0;
+        while (sumFull) {
+            digitFull = sumFull % 10;
+            sumFull += digitFull;
+            sumFull = (sumFull - digitFull) / 10;
+        }
+
+        let newSumFull = sumFull;
+        if (newSumFull >= 10) {
+            newSumFull = newSumFull % 9;
+        }
+
+        
 
         this.setState({ 
-        yearSum: sumY,
-        monthDaySum: sumi,
-        headerText: "Your Personal Year number is  "
+        yearSum: newSumY,
+        monthDaySum: newSumY,
+        personalYearHeader: "Your Personal Year number is  ",
+        fullDateSum: newSumFull,
+        lifePathHeader: "You life pat number is "
     });
         
     }
@@ -142,7 +154,8 @@ class HomePage extends React.Component {
                 </Container>
                 <div className="row-full-width">
                 <Row className="home-row2">
-                     <h5>{this.state.headerText} {this.state.monthDaySum} </h5>
+                    {/* <h3>sum year digits: {this.state.yearSum}</h3><br></br> */}
+                     <h5>{this.state.personalYearHeader} {this.state.monthDaySum} </h5>
                      <p>{forecastText}</p>
 
                 </Row>
@@ -152,3 +165,14 @@ class HomePage extends React.Component {
     }
 }
 export default HomePage;
+
+
+
+
+                // נוסחא קודמת
+
+                // let sumDM = 5;
+                // while (monthDayValue > 0) {
+                //     sumDM += monthDayValue % 10;
+                //     monthDayValue = Math.floor(monthDayValue / 10);
+                // }
