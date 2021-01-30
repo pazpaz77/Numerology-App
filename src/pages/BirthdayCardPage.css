@@ -1,0 +1,25 @@
+/* .bd-card {
+    background-color: rgba(238, 161, 161, 0.876);
+    margin-top: 40px;
+    padding: 30px;
+    border-radius: 10px;
+    
+} */
+p {
+    text-align: justify;
+}
+h5 {
+    color:rgb(15, 4, 4);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.c-home-forecast-page {
+    margin-top: 40px;
+    
+}
+
+form {
+    margin-top: 40px;
+
+}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Jumbotron } from 'react-bootstrap';
+import { Container, Image, Jumbotron, Row, Col } from 'react-bootstrap';
 import DateForm from '../components/dateForm';
 import './HomePagey.css';
 
@@ -15,7 +15,6 @@ class HomePage extends React.Component {
         headerText:"",
       };
 
-    //   this.fullDateDigits=this.fullDateDigits.bind(this);
     }
     
     
@@ -27,26 +26,44 @@ class HomePage extends React.Component {
     //         monthDaySum: sum + 3});
     // }
 
-
+    
     sumDateDigits = (year, month, day) => {
         let monthValue = parseInt(month);
         let dayValue = parseInt(day);
         let monthDayValue = monthValue + dayValue;
 
         // day + month digits
-        let sumDM = 5;
-
+        
         // debugger
-        while (monthDayValue > 10) {
-            sumDM += monthDayValue % 10;
-            monthDayValue = Math.floor(monthDayValue / 10);
+        // לבדוק נוסחא
+        // function sumDigits(n) {
+        let sumDM = 0;
+        let digit = 0;
+        while (monthDayValue) {
+        digit = monthDayValue % 10;
+        sumDM += digit;
+        monthDayValue = (monthDayValue - digit) / 10;
         }
+        let sumi = sumDM;
+        if (sumi >= 10) {
+            sumi = sumi % 9;
+        }
+        
+        console.log(sumi);
+
+                // נוסחא קודמת
+
+                // let sumDM = 5;
+                // while (monthDayValue > 0) {
+                //     sumDM += monthDayValue % 10;
+                //     monthDayValue = Math.floor(monthDayValue / 10);
+                // }
 
 
         // sum year digits
         let yearValue = parseInt(year);
         let sumY = 0;
-        while (yearValue) {
+        while (yearValue > 0) {
             sumY += yearValue % 10;
             yearValue = Math.floor(yearValue / 10);
         }
@@ -54,7 +71,7 @@ class HomePage extends React.Component {
 
         this.setState({ 
         yearSum: sumY,
-        monthDaySum: sumDM,
+        monthDaySum: sumi,
         headerText: "Your Personal Year number is  "
     });
         
@@ -99,21 +116,37 @@ class HomePage extends React.Component {
 
     
         return (
-            <div c-home-page>
-                {/* <div className="">Homepage</div> */}
-                <Jumbotron><h4>Find your Personal Year number</h4>
+            // className="c-home-page"
+            <div>
+                <Container fluid className="c-home-page">
+                <Row>
+                    <Col xs={12} md={4}>
+                        <Image className ="center" src="https://i.pinimg.com/originals/95/c9/e7/95c9e744532f152301176be9f3d677ff.jpg" />
+                    </Col>
+                    
+                    <Col xs={12} md={8}>
+                    
+                        <Jumbotron><h4>Find your Personal Year number</h4>
+                        
+                        <DateForm 
+                            sumDateDigits={this.sumDateDigits} yearForcast={this.forecastText}/>
+
+                        </Jumbotron>
+
+                        
+                        {/* <div>sum year digits {this.state.yearSum}, <br> 
+                        </br>sum month+day digits {this.state.monthDaySum} 666 {forecastText}</div> */}
+                    </Col>
+                </Row>
                 
-                <DateForm 
-                    sumDateDigits={this.sumDateDigits} yearForcast={this.forecastText}/>
+                </Container>
+                <div className="row-full-width">
+                <Row className="home-row2">
+                     <h5>{this.state.headerText} {this.state.monthDaySum} </h5>
+                     <p>{forecastText}</p>
 
-                </Jumbotron>
-
-                <h5>{this.state.headerText} {this.state.monthDaySum} </h5>
-                <p>{forecastText}</p>
-                {/* <div>sum year digits {this.state.yearSum}, <br> 
-                </br>sum month+day digits {this.state.monthDaySum} 666 {forecastText}</div> */}
-                <p></p>
-                <div></div>
+                </Row>
+                </div>
             </div>
         )
     }

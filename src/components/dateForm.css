@@ -1,7 +1,9 @@
 .c-date-form {
     margin-top: 40px;
-    background-color:rgb(177, 117, 117);
+    background-color:#292929;
     padding: 20px;
+    color: white;
+    border-radius: 5px;
 
 }
 
@@ -10,3 +12,4 @@ h6 {
     margin-bottom: 20px;
 }
 
+/* #c7af6b GOLG COLOR */

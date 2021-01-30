@@ -10,29 +10,25 @@ class DateForm extends React.Component {
         monthValue: 1,
         yearValue: 2021,
       };
-    this.newDayInput=this.newDayInput.bind(this);
-    this.newMonthInput=this.newMonthInput.bind(this);
-    this.newYearInput=this.newYearInput.bind(this);
-    this.submitDate=this.submitDate.bind(this);
+    
     }
 
-    newDayInput (event)  {
+    newDayInput = (event) => {
         this.setState({ 
             dayValue: event.target.value});
     }
     
-    newMonthInput (event)  {
+    newMonthInput = (event) => {
         this.setState({ 
             monthValue: event.target.value});
     }
 
-    newYearInput (event)  {
+    newYearInput = (event) => {
         this.setState({ 
             yearValue: event.target.value});
     }
     
-    //yaron
-    submitDate () {
+    submitDate = () => {
         this.props.sumDateDigits(this.state.yearValue,this.state.monthValue, this.state.dayValue);
     }
 
@@ -102,7 +98,7 @@ class DateForm extends React.Component {
                     </Form.Row>
 
                     {/* {this.props.forecastText}  */}
-                    <Button onClick={this.submitDate} variant="secondary" type="button">
+                    <Button onClick={this.submitDate} variant="outline-warning" type="button">
                         Submit
                     </Button>
                     </Form>
