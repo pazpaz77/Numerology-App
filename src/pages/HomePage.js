@@ -77,7 +77,7 @@ class HomePage extends React.Component {
         monthDaySum: newSumDM,
         personalYearHeader: "Your Personal Year number is  ",
         fullDateSum: newSumFull,
-        lifePathHeader: "You life path number is "
+        lifePathHeader: "You Life path number is "
     });
         
     }

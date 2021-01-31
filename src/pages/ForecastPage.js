@@ -12,6 +12,8 @@ class ForecastPage extends React.Component {
             fullDateSum: "",
             monthSum: 0,
             daySum: 0,
+            dayForcastNum: "",
+            monthForcastNum :"",
             monthDaySum: "",
             personalYearHeader:"",
             dailyForecastHeader:"",
@@ -93,6 +95,8 @@ class ForecastPage extends React.Component {
             this.setState({ 
             yearSum: newSumY,
             monthDaySum: newSumDM,
+            dayForcastNum: 4, // fix real
+            monthForcastNum : 6, // fix real
             personalYearHeader: "Your Personal Year number is  ",
             fullDateSum: newSumFull,
             dailyForecastHeader: "Your Personal Day number is  ",
@@ -251,25 +255,27 @@ class ForecastPage extends React.Component {
                     </Col>
                     </Row>
                 
-                <Tabs defaultActiveKey="day" id="uncontrolled-tab-example">
-                        <Tab eventKey="day" title="Daily Numerology Forecasts">
-                        <h5 className="tab-h5-header">{this.state.dailyForecastHeader}  {this.state.monthDaySum} </h5>
-                        <p>{forecastText}</p>
-                           
-                        </Tab>
-                        <Tab eventKey="month" title="Monthly Numerology Forecasts">
-                        <h5 className="tab-h5-header">{this.state.monthlyForecastHeader}  {this.state.monthDaySum} </h5>
-                        <p>{forecastText}</p>
-                           
-                        </Tab>
+                <Tabs defaultActiveKey="year" id="uncontrolled-tab-example">
+
                         <Tab eventKey="year" title="Yearly Numerology Forecasts">
                         <h5 className="tab-h5-header">{this.state.personalYearHeader}  {this.state.monthDaySum} </h5>
                         <p>{forecastText}</p>
                            
                         </Tab>
-                        </Tabs>
-                        </Container>
-                </div>
+                        <Tab eventKey="month" title="Monthly Numerology Forecasts">
+                        <h5 className="tab-h5-header">{this.state.monthlyForecastHeader}  {this.state.monthForcastNum} </h5>
+                        <p>{forecastText}</p>
+                           
+                        </Tab>
+                       
+                        <Tab eventKey="day" title="Daily Numerology Forecasts">
+                        <h5 className="tab-h5-header">{this.state.dailyForecastHeader}  {this.state.dayForcastNum} </h5>
+                        <p>{forecastText}</p>
+                           
+                        </Tab>
+                </Tabs>
+            </Container>
+            </div>
         )
     }
 }

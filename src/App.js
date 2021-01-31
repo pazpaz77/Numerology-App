@@ -9,6 +9,7 @@ import SignupPage from './pages/SignupPage';
 import LoginPage from './pages/LoginPage';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import yearForecastData from './data/Personalyear.js';
+import dayForecastData from './data/PersonalDay.js';
 import lifePathData from './data/LifePath.js';
 
 
@@ -21,16 +22,16 @@ class App extends React.Component {
   this.state = {
         yearForecastData: yearForecastData,
         lifePathData: lifePathData,
+        dayForecastData: dayForecastData,
   }
   }
   
   render() {
         console.log(yearForecastData);
         console.log("life path: " ,lifePathData);
+        console.log("day forecast: " ,dayForecastData);
   return (
-    // <div className="App">
-    //   <h1></h1>
-    // </div>
+   
     
     <HashRouter>
       
@@ -43,7 +44,7 @@ class App extends React.Component {
         height="30"
         className="d-inline-block align-top"
         
-      /> My Numerology
+      />  My Numerology
      
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -59,15 +60,20 @@ class App extends React.Component {
     </Navbar>
     <Container className="app-container">
           <Route exact path="/">
-                  <HomePage yearForecastData = {this.state.yearForecastData} lifePathData = {this.state.lifePathData}/>
+                  <HomePage 
+                  yearForecastData = {this.state.yearForecastData} 
+                  lifePathData = {this.state.lifePathData}/>
           </Route>
 
           <Route exact path="/birthdayCard">
-                  <BirthdayCardPage yearForecastData = {this.state.yearForecastData} />
+                  <BirthdayCardPage 
+                  yearForecastData = {this.state.yearForecastData} />
           </Route>
 
           <Route exact path="/forecast">
-                  <ForecastPage yearForecastData = {this.state.yearForecastData}/>
+                  <ForecastPage 
+                  yearForecastData = {this.state.yearForecastData} 
+                  dayForecastData = {this.state.dayForecastData}/>
           </Route>
 
           {/* <Route exact path="/my-page">

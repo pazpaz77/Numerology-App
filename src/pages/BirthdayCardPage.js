@@ -216,7 +216,7 @@ class BirthdayCardPage extends React.Component {
                         <Modal.Body>
                             <p>{this.state.greetingText}</p>
                             <h5>{this.state.cardForecastHeader}</h5>
-                            <p>{forecastText}</p>
+                            <p> {forecastText}</p>
                         </Modal.Body>
                         <Modal.Footer>
                             <Button variant="secondary" onClick={this.hideModal}>
