@@ -62,7 +62,8 @@ class BirthdayCardPage extends React.Component {
         
         monthDaySum: sumDM,
         headerText: "Your Personal Year number is  ",
-        cardForecastHeader: "Your numerology forecast for the upcoming year"
+        cardForecastHeader: "Your numerology forecast for the upcoming year",
+        modalShow: true,
        
     });
     }
@@ -191,7 +192,7 @@ class BirthdayCardPage extends React.Component {
                         </Form.Row>
 
                     <Button 
-                        onClick= {() => this.createCard(this.state.monthValue,this.state.dayValue, this.showModal)}  
+                        onClick= {() => this.createCard(this.state.monthValue,this.state.dayValue)}  
                         variant="dark" 
                         type="button">
                         Creat Card
@@ -205,7 +206,7 @@ class BirthdayCardPage extends React.Component {
                         <Image className ="center-card" src="https://i.pinimg.com/originals/95/c9/e7/95c9e744532f152301176be9f3d677ff.jpg" />
                     </Col>
                     </Row>
-                    <Modal show={this.showModal} onHide={this.hideModal}>
+                    <Modal show={this.state.modalShow} onHide={this.hideModal}>
                     {/* <Modal.Dialog> */}
                     {/* <div className ="bd-card"> */}
                         <Modal.Header closeButton>

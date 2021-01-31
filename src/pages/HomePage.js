@@ -157,7 +157,7 @@ class HomePage extends React.Component {
             // className="c-home-page"
             <div>
                 <Container fluid className="c-home-page">
-                <Row>
+                <Row className="row-center">
                     <Col xs={12} md={4}>
                         <Image className ="center" src="https://i.pinimg.com/originals/95/c9/e7/95c9e744532f152301176be9f3d677ff.jpg" />
                     </Col>
