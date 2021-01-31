@@ -157,6 +157,7 @@ class HomePage extends React.Component {
             <div>
                 <Container fluid className="c-home-page">
                 <Row className="row-center">
+                   <p className="p-home-first">Have you heard of Numerology? Do you always see the same number throughout your life? Have you found yourself drawn to particular numbers? In simple terms, numerology is a study of numbers in your life. You can uncover information about the world and also each individual person by using Numerology. Numerology is seen as a universal language of numbers.</p>
                     <Col xs={12} md={4}>
                         <Image className ="center" src="https://i.pinimg.com/originals/95/c9/e7/95c9e744532f152301176be9f3d677ff.jpg" />
                     </Col>

@@ -16,7 +16,12 @@ h4 {
 .c-home-page {
     margin-top: 40px;
     
+}
 
+.p-home-first {
+    font-style: italic;
+    font-weight: 500;
+    margin-bottom: 40px;
 }
 
 .row-full-width {
