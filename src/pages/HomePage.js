@@ -55,7 +55,6 @@ class HomePage extends React.Component {
         }
 
         // *** sum full date digits *** //
-        debugger
         let sumFull = newSumY + newSumDM - 5;
         let sumDate = 0;
         console.log("sumfull = ",sumFull);
@@ -180,22 +179,19 @@ class HomePage extends React.Component {
                 
                 </Container>
                 <div>
-                <Row>
-                     <Col xs={12} md={6} className="yellow-col">
+                <Row className="yellow-col">
+                     {/* <Col xs={12} md={6} className="yellow-col"> */}
                      <h5>{this.state.lifePathHeader} {this.state.fullDateSum}</h5>
                     <p>{lifePathText}</p>
-                     </Col>
+                     {/* </Col> */}
 
-                     <Col xs={12} md={6} className="yellow-col">
+                     {/* <Col xs={12} md={6} className="yellow-col">
                      <h5>{this.state.personalYearHeader} {this.state.monthDaySum} </h5>
                      <p>{forecastText}</p>
-                     </Col>
+                     </Col> */}
 
                 </Row>
-                <Row>
-                    {/* <h5>{this.state.lifePathHeader} {this.state.fullDateSum}</h5>
-                    <p>{lifePathText}</p> */}
-                </Row>
+                
                 </div>
             </div>
         )

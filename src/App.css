@@ -10,12 +10,14 @@ background-color:lightgrey;
 .navbar-dark .navbar-brand {
   color: white;
 }
-/* .Navbar.Brand {
-  color: yellow;
-} */
+
 
 .navbar-dark .navbar-brand:hover {
   color:  #ffc107;
+}
+
+.navbar-dark .navbar-nav .nav-link.nav-link.active {
+  color: #ffc107;
 }
 
 .App {

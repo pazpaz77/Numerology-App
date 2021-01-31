@@ -1,0 +1,36 @@
+.img-forecast {
+    text-align: center;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-bottom: 30px;
+    width: 50%;
+    opacity: 80%;
+   
+}
+
+.c-home-forecast-page {
+    margin-top: 40px;
+}
+
+.nav-tabs .nav-link {
+    /* background-color: #e9ecef; */
+    color: rgb(49, 49, 49);
+}
+
+.nav-tabs .nav-link.active {
+    background-color: #ffc107;
+    color: black;
+    font-weight: 600;
+}
+
+/* .navbar-dark .navbar-nav .nav-link.nav-link.active {
+    color: #ffc107;
+} */
+
+.tab-h5-header {
+    text-align: left;
+    color: black;
+    margin-top: 20px;
+}

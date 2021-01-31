@@ -203,7 +203,7 @@ class BirthdayCardPage extends React.Component {
 
                     </Col>   
                     <Col xs={12} md={4}>
-                        <Image className ="center-card" src="https://i.pinimg.com/originals/95/c9/e7/95c9e744532f152301176be9f3d677ff.jpg" />
+                        <Image className ="img-card" src="https://i.pinimg.com/originals/95/c9/e7/95c9e744532f152301176be9f3d677ff.jpg" />
                     </Col>
                     </Row>
                     <Modal show={this.state.modalShow} onHide={this.hideModal}>
