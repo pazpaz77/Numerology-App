@@ -3,7 +3,7 @@ import { Container, Image, Jumbotron, Row, Col } from 'react-bootstrap';
 import DateForm from '../components/dateForm';
 import './HomePagey.css';
 
-class HomePage extends React.Component {
+class CopyHomePage extends React.Component {
     constructor(props) {
     super(props);
     this.state = {
@@ -174,7 +174,8 @@ class HomePage extends React.Component {
                         </Jumbotron>
 
                         
-   
+                        {/* <div>sum year digits {this.state.yearSum}, <br> 
+                        </br>sum month+day digits {this.state.monthDaySum} 666 {forecastText}</div> */}
                     </Col>
                 </Row>
                 

@@ -1,4 +1,6 @@
-
+/* .Jumbotron {
+    
+} */
 
 h4 {
     color:rgb(36, 36, 36);
@@ -13,6 +15,7 @@ h4 {
 
 .c-home-page {
     margin-top: 40px;
+    
 
 }
 
@@ -27,22 +30,23 @@ h4 {
 .row-center {
     align-items: center;
 }
+
 .center{
     text-align: center;
     display: block;
     justify-content: center;
     align-items: center;
     margin: auto;
+    margin-bottom: 55px;
     width: 80%;
     /* height: 80%; */
   }
 
   .yellow-col {
       background-color: #ffc107;
-      max-width:  100%;
+      /* max-width:  100%; */
       padding: 30px;
       margin-bottom: 10px;
-      border: 0px solid grey;
   }
  
 

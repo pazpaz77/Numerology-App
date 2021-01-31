@@ -130,7 +130,7 @@ class BirthdayCardPage extends React.Component {
                 <h5 className="card-page-header">CREATE PERSONALIZED BIRTHDAY CARDS</h5>
                 <p>Create personalized birthday cards for your friend or loved one with a personalized yearly numerology forecast Your friends, family or loved one will cherish this unique birthday cards. add personalized greeting text and enter the person birth date to get the yearly birthday forecast.  </p>
                 <Form>
-                    <h6>Enter person date of birth</h6>
+                    <h6 className="card-h6">Enter person date of birth</h6>
                     <Form.Row>
                         <Form.Group as={Col} controlId="formGridCity" type="date">
                         <Form.Label>Day</Form.Label>

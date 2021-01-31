@@ -11,6 +11,13 @@ p {
     text-align: justify;
 
 }
+
+.card-h6 {
+    color:rgb(15, 4, 4);
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+}
+
 h5 {
     color:rgb(15, 4, 4);
     text-align: center;
@@ -22,9 +29,7 @@ h5 {
     max-width: 100%;
     
     /* background-image: url("https://parade.com/wp-content/uploads/2020/12/s-o-c-i-a-l-c-u-t-CZ8XutyXLr8-unsplash-scaled.jpg"); */
-    
-
-    
+  
 }
 
 form {
