@@ -181,7 +181,7 @@ class HomePage extends React.Component {
                 <div>
                 <Row className="yellow-col">
                      {/* <Col xs={12} md={6} className="yellow-col"> */}
-                     <h5>{this.state.lifePathHeader} {this.state.fullDateSum}</h5>
+                     <h5 className="h5-home">{this.state.lifePathHeader} {this.state.fullDateSum}</h5>
                     <p>{lifePathText}</p>
                      {/* </Col> */}
 

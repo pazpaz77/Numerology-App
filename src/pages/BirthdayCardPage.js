@@ -62,7 +62,7 @@ class BirthdayCardPage extends React.Component {
         
         monthDaySum: sumDM,
         headerText: "Your Personal Year number is  ",
-        cardForecastHeader: "Your numerology forecast for the upcoming year",
+        cardForecastHeader: "YOUR NUMEROLOGY FORECAST FOR THE UPCOMING YEAR",
         modalShow: true,
        
     });
@@ -79,7 +79,7 @@ class BirthdayCardPage extends React.Component {
     render() {
 
         const yearOptions = [];
-        for (let i = 2022; i > 1920; i--) {
+        for (let i = 2021; i > 1920; i--) {
             const option = <option key = {i} value = {i} >{i}</option>
             yearOptions.push(option)
         }
@@ -185,7 +185,7 @@ class BirthdayCardPage extends React.Component {
                         <Form.Row>
                             <Form.Group as={Col} controlId="exampleForm.ControlTextarea1">
                                 <Form.Label>Add personal Birthday text</Form.Label>
-                                <Form.Control as="textarea" rows={3}  
+                                <Form.Control as="textarea" rows={4}  
                                         defaultValue={this.state.greetingText}
                                         onChange={this.newGreetingText} />
                             </Form.Group>
@@ -206,16 +206,22 @@ class BirthdayCardPage extends React.Component {
                         <Image className ="img-card" src="https://i.pinimg.com/originals/95/c9/e7/95c9e744532f152301176be9f3d677ff.jpg" />
                     </Col>
                     </Row>
-                    <Modal show={this.state.modalShow} onHide={this.hideModal}>
-                    {/* <Modal.Dialog> */}
+                    <Modal className="my-modal" show={this.state.modalShow} 
+                            onHide={this.hideModal}
+                            >
+                    {/* dialogClassName="modal-200w" */}
                     {/* <div className ="bd-card"> */}
+                        
+                        <Image className ="bg-card" src="https://www.home-assistant.io/images/lovelace/header-footer/balloons-header.png" /> 
                         <Modal.Header closeButton>
-                            <Modal.Title>{this.state.cardHeaderText}</Modal.Title>
+
+                            <Modal.Title>{this.state.cardHeaderText} &#127880;</Modal.Title>
                         </Modal.Header>
 
                         <Modal.Body>
-                            <p>{this.state.greetingText}</p>
+                            <p className="italic-p">{this.state.greetingText}</p>
                             <h5>{this.state.cardForecastHeader}</h5>
+                            <h5> YEAR NUMBER {this.state.monthDaySum}</h5>
                             <p> {forecastText}</p>
                         </Modal.Body>
                         <Modal.Footer>
@@ -225,7 +231,6 @@ class BirthdayCardPage extends React.Component {
          
                         </Modal.Footer>
                          {/* </div> */}
-                    {/* </Modal.Dialog> */}
                     </Modal>
                     </Container>
                 </div>

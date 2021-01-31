@@ -37,7 +37,7 @@ class DateForm extends React.Component {
     render() {
 
         const yearOptions = [];
-        for (let i = 2022; i > 1920; i--) {
+        for (let i = 2021; i > 1920; i--) {
             const option = <option key = {i} value = {i} >{i}</option>
             yearOptions.push(option)
         }

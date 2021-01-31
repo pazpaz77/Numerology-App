@@ -87,16 +87,19 @@ class ForecastPage extends React.Component {
             if (newSumFull >= 10) {
                 newSumFull = newSumFull % 9;
             }
-
             
-    
+            
+            let dayNum;
+            dayNum = Math.floor(Math.random() * 10) + 1;
+            
+
             //*** SET STATE ***//
     
             this.setState({ 
             yearSum: newSumY,
             monthDaySum: newSumDM,
-            dayForcastNum: 4, // fix real
-            monthForcastNum : 6, // fix real
+            dayForcastNum: dayNum,   // fix real
+            monthForcastNum : Math.floor(Math.random() * 10) + 1, // fix real
             personalYearHeader: "Your Personal Year number is  ",
             fullDateSum: newSumFull,
             dailyForecastHeader: "Your Personal Day number is  ",
@@ -109,7 +112,7 @@ class ForecastPage extends React.Component {
     render() {
 
         const yearOptions = [];
-        for (let i = 2022; i > 1920; i--) {
+        for (let i = 2021; i > 1920; i--) {
             const option = <option key = {i} value = {i} >{i}</option>
             yearOptions.push(option)
         }
@@ -151,38 +154,38 @@ class ForecastPage extends React.Component {
             forecastText = this.props.yearForecastData[8].pytext;
          } 
 
-        // //life path text 1-9
-         
-        //  let lifePathText = "";
+        // DAY FORECAST
 
-        //  if (this.state.fullDateSum == 1) {
-        //   lifePathText = this.props.lifePathData[0].lptext;
-        //  }
-        //   else if (this.state.fullDateSum == 2) {
-        //      lifePathText = this.props.lifePathData[1].lptext;
-        //   }
-        //   else if (this.state.fullDateSum == 3) {
-        //      lifePathText = this.props.lifePathData[2].lptext;
-        //   }
-        //   else if (this.state.fullDateSum == 4) {
-        //      lifePathText = this.props.lifePathData[3].lptext;
-        //   }
-        //   else if (this.state.fullDateSum == 5) {
-        //      lifePathText = this.props.lifePathData[4].lptext;
-        //   }
-        //   else if (this.state.fullDateSum == 6) {
-        //      lifePathText = this.props.lifePathData[5].lptext;
-        //   }
-        //   else if (this.state.fullDateSum == 7) {
-        //      lifePathText = this.props.lifePathData[6].lptext;
-        //   }
-        //   else if (this.state.fullDateSum == 8) {
-        //      lifePathText = this.props.lifePathData[7].lptext;
-        //   }
- 
-        //   else if (this.state.fullDateSum == 9) {
-        //      lifePathText = this.props.lifePathData[8].lptext;
-        //   } 
+        let dayForcast = "";
+
+        if (this.state.dayForcastNum == 1) {
+         dayForcast = this.props.dayForecastData[0].pdtext;
+        }
+         else if (this.state.dayForcastNum == 2) {
+            dayForcast = this.props.dayForecastData[1].pdtext;
+         }
+         else if (this.state.dayForcastNum == 3) {
+            dayForcast = this.props.dayForecastData[2].pdtext;
+         }
+         else if (this.state.dayForcastNum == 4) {
+            dayForcast = this.props.dayForecastData[3].pdtext;
+         }
+         else if (this.state.dayForcastNum == 5) {
+            dayForcast = this.props.dayForecastData[4].pdtext;
+         }
+         else if (this.state.dayForcastNum == 6) {
+            dayForcast = this.props.dayForecastData[5].pdtext;
+         }
+         else if (this.state.dayForcastNum == 7) {
+            dayForcast = this.props.dayForecastData[6].pdtext;
+         }
+         else if (this.state.dayForcastNum == 8) {
+            dayForcast = this.props.dayForecastData[7].pdtext;
+         }
+
+         else if (this.state.dayForcastNum == 9) {
+            dayForcast = this.props.dayForecastData[8].pdtext;
+         } 
 
         return (
                 <div className="c-home-forecast-page">
@@ -193,7 +196,7 @@ class ForecastPage extends React.Component {
                 <Col>
                 
                 <Jumbotron> 
-                <h3>Check your personal Daily, Monthly and Yearly Numerology Forecasts</h3>
+                <h3>Check your personal Numerology Forecasts: daily, monthly and yearly </h3>
                 <Form>
                     <h6 className="card-h6">Enter your date of birth</h6>
                     <Form.Row>
@@ -270,7 +273,7 @@ class ForecastPage extends React.Component {
                        
                         <Tab eventKey="day" title="Daily Numerology Forecasts">
                         <h5 className="tab-h5-header">{this.state.dailyForecastHeader}  {this.state.dayForcastNum} </h5>
-                        <p>{forecastText}</p>
+                        <p>{dayForcast}</p>
                            
                         </Tab>
                 </Tabs>
