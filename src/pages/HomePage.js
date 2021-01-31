@@ -8,7 +8,7 @@ class HomePage extends React.Component {
     super(props);
     this.state = {
         yearSum : 0,
-        fullDateSum: 0,
+        fullDateSum: "",
         monthSum: 0,
         daySum: 0,
         monthDaySum: "",
@@ -17,16 +17,7 @@ class HomePage extends React.Component {
       };
 
     }
-    
-    
-    // fullDateDigits(year, month, day) {
-        
-    //     let sum = parseInt(month);
-    //     // console.log (sum);
-    //     this.setState({ 
-    //         monthDaySum: sum + 3});
-    // }
-
+  
     
     sumDateDigits = (year, month, day) => {
         let monthValue = parseInt(month);
@@ -64,33 +55,36 @@ class HomePage extends React.Component {
         }
 
         // *** sum full date digits *** //
-        let sumFull = newSumY + newSumY;
+        debugger
+        let sumFull = newSumY + newSumDM - 5;
+        let sumDate = 0;
+        console.log("sumfull = ",sumFull);
         let digitFull = 0;
         while (sumFull) {
             digitFull = sumFull % 10;
-            sumFull += digitFull;
+            sumDate += digitFull;
             sumFull = (sumFull - digitFull) / 10;
         }
 
-        let newSumFull = sumFull;
+        let newSumFull = sumDate;
         if (newSumFull >= 10) {
             newSumFull = newSumFull % 9;
         }
 
-        
+        //*** SET STATE ***//
 
         this.setState({ 
         yearSum: newSumY,
-        monthDaySum: newSumY,
+        monthDaySum: newSumDM,
         personalYearHeader: "Your Personal Year number is  ",
         fullDateSum: newSumFull,
-        lifePathHeader: "You life pat number is "
+        lifePathHeader: "You life path number is "
     });
         
     }
 
     render() {
-        //logic if 1-9
+        //year forecast text 1-9
 
         let forecastText = "";
 
@@ -122,7 +116,39 @@ class HomePage extends React.Component {
          else if (this.state.monthDaySum == 9) {
             forecastText = this.props.yearForecastData[8].pytext;
          } 
+
+        //life path text 1-9
          
+         let lifePathText = "";
+
+         if (this.state.fullDateSum == 1) {
+          lifePathText = this.props.lifePathData[0].lptext;
+         }
+          else if (this.state.fullDateSum == 2) {
+             lifePathText = this.props.lifePathData[1].lptext;
+          }
+          else if (this.state.fullDateSum == 3) {
+             lifePathText = this.props.lifePathData[2].lptext;
+          }
+          else if (this.state.fullDateSum == 4) {
+             lifePathText = this.props.lifePathData[3].lptext;
+          }
+          else if (this.state.fullDateSum == 5) {
+             lifePathText = this.props.lifePathData[4].lptext;
+          }
+          else if (this.state.fullDateSum == 6) {
+             lifePathText = this.props.lifePathData[5].lptext;
+          }
+          else if (this.state.fullDateSum == 7) {
+             lifePathText = this.props.lifePathData[6].lptext;
+          }
+          else if (this.state.fullDateSum == 8) {
+             lifePathText = this.props.lifePathData[7].lptext;
+          }
+ 
+          else if (this.state.fullDateSum == 9) {
+             lifePathText = this.props.lifePathData[8].lptext;
+          } 
          
         
 
@@ -138,9 +164,11 @@ class HomePage extends React.Component {
                     
                     <Col xs={12} md={8}>
                     
-                        <Jumbotron><h4>Find your Personal Year number</h4>
+                        <Jumbotron> 
+                           <h2>FIND YOUR PERSONAL NUMBERS</h2> 
+                           <h4>Enter your birth date and find your life path number and your Year forecast  numbers.</h4>
                         
-                        <DateForm 
+                           <DateForm 
                             sumDateDigits={this.sumDateDigits} yearForcast={this.forecastText}/>
 
                         </Jumbotron>
@@ -152,12 +180,22 @@ class HomePage extends React.Component {
                 </Row>
                 
                 </Container>
-                <div className="row-full-width">
-                <Row className="home-row2">
-                    {/* <h3>sum year digits: {this.state.yearSum}</h3><br></br> */}
+                <div>
+                <Row>
+                     <Col xs={12} md={6} className="yellow-col">
+                     <h5>{this.state.lifePathHeader} {this.state.fullDateSum}</h5>
+                    <p>{lifePathText}</p>
+                     </Col>
+
+                     <Col xs={12} md={6} className="yellow-col">
                      <h5>{this.state.personalYearHeader} {this.state.monthDaySum} </h5>
                      <p>{forecastText}</p>
+                     </Col>
 
+                </Row>
+                <Row>
+                    {/* <h5>{this.state.lifePathHeader} {this.state.fullDateSum}</h5>
+                    <p>{lifePathText}</p> */}
                 </Row>
                 </div>
             </div>
@@ -167,12 +205,6 @@ class HomePage extends React.Component {
 export default HomePage;
 
 
+{/* <h2><span style={{color:"green"}}>FIND </span>YOUR <span style={{color:"#e74f4f"}}>PERSONAL</span> <span style={{color:"#358fdc"}}>NUMBERS</span></h2>  */}
+{/* <h2><span style={{color:"#dc354c"}}>FIND </span>YOUR <span style={{color:"#dc354c"}}>P</span>ERSONAL <span style={{color:"#dc354c"}}>N</span>UMBERS</h2>  */}
 
-
-                // נוסחא קודמת
-
-                // let sumDM = 5;
-                // while (monthDayValue > 0) {
-                //     sumDM += monthDayValue % 10;
-                //     monthDayValue = Math.floor(monthDayValue / 10);
-                // }

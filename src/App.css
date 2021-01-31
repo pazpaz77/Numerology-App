@@ -4,6 +4,20 @@
 background-color:lightgrey;
 }   */
 
+/* .Nav.Link {
+  
+} */
+.navbar-dark .navbar-brand {
+  color: white;
+}
+/* .Navbar.Brand {
+  color: yellow;
+} */
+
+.navbar-dark .navbar-brand:hover {
+  color:  #ffc107;
+}
+
 .App {
   text-align: center;
 }

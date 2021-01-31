@@ -5,8 +5,11 @@
     border-radius: 10px;
     
 } */
+/* body {
+} */
 p {
     text-align: justify;
+
 }
 h5 {
     color:rgb(15, 4, 4);
@@ -16,10 +19,39 @@ h5 {
 
 .c-home-forecast-page {
     margin-top: 40px;
+    max-width: 100%;
+    
+    /* background-image: url("https://parade.com/wp-content/uploads/2020/12/s-o-c-i-a-l-c-u-t-CZ8XutyXLr8-unsplash-scaled.jpg"); */
+    
+
     
 }
 
 form {
     margin-top: 40px;
 
+}
+
+.center-card{
+    text-align: center;
+    display: block;
+    justify-content:center;
+    align-items:center;
+    margin: auto;
+    width: 80%;
+    opacity: 30%;
+  }
+
+  .card-page-header {
+      color:  black;
+  }
+
+  .yellow-col-card {
+    background-color:#c56158ab;
+    max-width:  100%;
+    padding: 30px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    color: black;
+    
 }

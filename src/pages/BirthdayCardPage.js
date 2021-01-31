@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Col, Container, Form, Modal, Row } from 'react-bootstrap';
+import { Button, Col, Container, Form, Image, Modal, Row } from 'react-bootstrap';
 import './BirthdayCardPage.css'
 
 class BirthdayCardPage extends React.Component {
@@ -12,6 +12,7 @@ class BirthdayCardPage extends React.Component {
         cardHeaderText:"",
         greetingText:"",
         cardForecastHeader:"",
+        modalShow: false,
     
       };
     
@@ -43,7 +44,7 @@ class BirthdayCardPage extends React.Component {
     }
 
     createCard = (month, day) => {
-        debugger
+        
         let monthValue = parseInt(month);
         let dayValue = parseInt(day);
         let monthDayValue = monthValue + dayValue;
@@ -66,10 +67,14 @@ class BirthdayCardPage extends React.Component {
     });
     }
 
-    // submitDate () {
-    //     this.props.sumDateDigits(this.state.yearValue,this.state.monthValue, this.state.dayValue);
-    // }
+    showModal = () => {
+        this.setState({ modalShow: true });
+      };
     
+    hideModal = () => {
+        this.setState({ modalShow: false });
+      };
+   
     render() {
 
         const yearOptions = [];
@@ -114,12 +119,14 @@ class BirthdayCardPage extends React.Component {
          else if (this.state.monthDaySum == 9) {
             forecastText = this.props.yearForecastData[8].pytext;
          } 
-         
+        
 
         return (
                 <div className="c-home-forecast-page">
-                    <Container>
-                <h5>Create personalized birthday cards</h5>
+                <Container>
+                        <Row>
+                <Col xs={12} md={8} className="yellow-col-card">
+                <h5 className="card-page-header">CREATE PERSONALIZED BIRTHDAY CARDS</h5>
                 <p>Create personalized birthday cards for your friend or loved one with a personalized yearly numerology forecast Your friends, family or loved one will cherish this unique birthday cards. add personalized greeting text and enter the person birth date to get the yearly birthday forecast.  </p>
                 <Form>
                     <h6>Enter person date of birth</h6>
@@ -183,22 +190,42 @@ class BirthdayCardPage extends React.Component {
                             </Form.Group>
                         </Form.Row>
 
-                    <Button onClick= {() => this.createCard(this.state.monthValue,this.state.dayValue)} variant="danger" type="button">
+                    <Button 
+                        onClick= {() => this.createCard(this.state.monthValue,this.state.dayValue, this.showModal)}  
+                        variant="dark" 
+                        type="button">
                         Creat Card
                     </Button>
+                    
+                    
                     </Form>
-                    <Modal.Dialog>
+
+                    </Col>   
+                    <Col xs={12} md={4}>
+                        <Image className ="center-card" src="https://i.pinimg.com/originals/95/c9/e7/95c9e744532f152301176be9f3d677ff.jpg" />
+                    </Col>
+                    </Row>
+                    <Modal show={this.showModal} onHide={this.hideModal}>
+                    {/* <Modal.Dialog> */}
                     {/* <div className ="bd-card"> */}
                         <Modal.Header closeButton>
                             <Modal.Title>{this.state.cardHeaderText}</Modal.Title>
                         </Modal.Header>
-                        {/* <h4>{this.state.cardHeaderText}</h4>
-                        <p>{this.state.greetingText}</p>
-                        <h5>{this.state.cardForecastHeader}</h5>
-                        <p>{forecastText}</p> */}
 
-                    {/* </div> */}
-                    </Modal.Dialog>
+                        <Modal.Body>
+                            <p>{this.state.greetingText}</p>
+                            <h5>{this.state.cardForecastHeader}</h5>
+                            <p>{forecastText}</p>
+                        </Modal.Body>
+                        <Modal.Footer>
+                            <Button variant="secondary" onClick={this.hideModal}>
+                                Close
+                            </Button>
+         
+                        </Modal.Footer>
+                         {/* </div> */}
+                    {/* </Modal.Dialog> */}
+                    </Modal>
                     </Container>
                 </div>
         )
