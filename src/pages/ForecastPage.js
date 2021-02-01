@@ -193,10 +193,10 @@ class ForecastPage extends React.Component {
                 <Row className="row-center">
                     
                 
-                <Col>
+                <Col xs={12} md={8}>
                 
                 <Jumbotron> 
-                <h3>Check your personal Numerology Forecasts: daily, monthly and yearly </h3>
+                <h3>Check your personal Numerology Forecasts:<br></br> Daily monthly and yearly </h3>
                 <Form>
                     <h6 className="card-h6">Enter your date of birth</h6>
                     <Form.Row>
@@ -253,7 +253,7 @@ class ForecastPage extends React.Component {
                     </Jumbotron>
                     </Col>
                     
-                    <Col>
+                    <Col xs={12} md={4}>
                         <Image className ="img-forecast" src="https://i.pinimg.com/originals/95/c9/e7/95c9e744532f152301176be9f3d677ff.jpg" />
                     </Col>
                     </Row>

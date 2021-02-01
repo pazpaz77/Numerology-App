@@ -54,7 +54,7 @@ class DateForm extends React.Component {
             <div className="c-date-form">
 
                 <Form>
-                    <h6>Enter your date of birth</h6>
+                    <h6 className="h6-form-home">Enter your date of birth</h6>
                     <Form.Row>
                         <Form.Group as={Col} controlId="formGridCity" type="date">
                         <Form.Label>Day</Form.Label>
@@ -71,7 +71,7 @@ class DateForm extends React.Component {
                             defaultValue={this.state.monthValue}
                             onChange={this.newMonthInput}>
                             <option value="1">January</option>
-                            <option value="2">February</option>
+                            <option value="2">February</option>img-forecast
                             <option value="3">March</option>
                             <option value="4">April</option>
                             <option value="5">May</option>

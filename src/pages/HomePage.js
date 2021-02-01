@@ -83,39 +83,7 @@ class HomePage extends React.Component {
     }
 
     render() {
-        //year forecast text 1-9
-
-        let forecastText = "";
-
-        if (this.state.monthDaySum == 1) {
-         forecastText = this.props.yearForecastData[0].pytext;
-        }
-         else if (this.state.monthDaySum == 2) {
-            forecastText = this.props.yearForecastData[1].pytext;
-         }
-         else if (this.state.monthDaySum == 3) {
-            forecastText = this.props.yearForecastData[2].pytext;
-         }
-         else if (this.state.monthDaySum == 4) {
-            forecastText = this.props.yearForecastData[3].pytext;
-         }
-         else if (this.state.monthDaySum == 5) {
-            forecastText = this.props.yearForecastData[4].pytext;
-         }
-         else if (this.state.monthDaySum == 6) {
-            forecastText = this.props.yearForecastData[5].pytext;
-         }
-         else if (this.state.monthDaySum == 7) {
-            forecastText = this.props.yearForecastData[6].pytext;
-         }
-         else if (this.state.monthDaySum == 8) {
-            forecastText = this.props.yearForecastData[7].pytext;
-         }
-
-         else if (this.state.monthDaySum == 9) {
-            forecastText = this.props.yearForecastData[8].pytext;
-         } 
-
+        
         //life path text 1-9
          
          let lifePathText = "";
@@ -157,7 +125,7 @@ class HomePage extends React.Component {
             <div>
                 <Container fluid className="c-home-page">
                 <Row className="row-center">
-                   <p className="p-home-first">Have you heard of Numerology? Do you always see the same number throughout your life? Have you found yourself drawn to particular numbers? In simple terms, numerology is a study of numbers in your life. You can uncover information about the world and also each individual person by using Numerology. Numerology is seen as a universal language of numbers.</p>
+                   <p className="p-home-first">Have you heard of <span style={{color:"#212529"}}>Numerology?</span> Do you always see the same number throughout your life? Have you found yourself drawn to particular numbers? In simple terms, numerology is a study of numbers in your life. You can uncover information about the world and also each individual person by using Numerology. Numerology is seen as a universal language of numbers.</p>
                     <Col xs={12} md={4}>
                         <Image className ="center" src="https://i.pinimg.com/originals/95/c9/e7/95c9e744532f152301176be9f3d677ff.jpg" />
                     </Col>

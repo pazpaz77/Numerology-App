@@ -1,12 +1,4 @@
 
-/* 
-.app-container {
-background-color:lightgrey;
-}   */
-
-/* .Nav.Link {
-  
-} */
 .navbar-dark .navbar-brand {
   color: white;
 }
@@ -17,7 +9,19 @@ background-color:lightgrey;
 }
 
 .navbar-dark .navbar-nav .nav-link.nav-link.active {
-  color: #ffc107;
+  color: #1b1b1b; 
+  background-color:  #ffc107;
+  border-radius: 5px;
+}
+
+.navbar-dark .navbar-nav .nav-link.nav-link:hover {
+  color:  #ffc107; 
+  
+}
+
+.navbar-dark .navbar-nav .nav-link.nav-link:focus {
+  color: #0e0d0d; 
+  
 }
 
 .App {
