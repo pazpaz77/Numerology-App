@@ -37,7 +37,7 @@ class App extends React.Component {
       
     
       <Navbar bg="dark" variant="dark" expand="lg">
-        <Navbar.Brand href="#home">
+        <Navbar.Brand>
         <img
         src="https://c0.klipartz.com/pngpicture/273/404/gratis-png-plantilla-de-cara-de-reloj-plantillas-de-reloj.png"
         width="30"

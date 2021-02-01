@@ -3,10 +3,10 @@
   color: white;
 }
 
-
+/* 
 .navbar-dark .navbar-brand:hover {
   color:  #ffc107;
-}
+} */
 
 .navbar-dark .navbar-nav .nav-link.nav-link.active {
   color: #1b1b1b; 

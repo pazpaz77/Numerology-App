@@ -1,11 +1,3 @@
-/* .bd-card {
-    background-color: rgba(238, 161, 161, 0.876);
-    margin-top: 40px;
-    padding: 30px;
-    border-radius: 10px;
-    
-} */
-
 .bg-card {
     width: 100%;
     height: 150px;
@@ -18,7 +10,7 @@ p {
 
 .modal-title {
     text-align: center;
-    color:rgb(248, 60, 107);
+    color:rgb(250, 82, 124);
     font-size: xx-large;
 }
 
@@ -37,9 +29,10 @@ p {
 }
 
 h5 {
-    color:rgb(248, 60, 107);
+    color:rgb(250, 82, 124);
     text-align: center;
     margin-bottom: 20px;
+    margin-top: 20px;
     font-weight: 700;
 }
 
@@ -52,8 +45,8 @@ h5 {
 
 .my-modal .modal-content {
     background-size: 100%;
-    opacity: 100%;
-    background-color:#e9ecef;
+    /* opacity: 100%; */
+    background-color:#f5f9ff;
     /* background-image: url("https://i.pinimg.com/originals/a6/86/38/a68638479a8fc3f8d5609846e5bbfa6c.jpg"); */
 
   }
