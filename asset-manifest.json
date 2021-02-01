@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/Numerology-App/static/css/main.8eb6e457.chunk.css",
-    "main.js": "/Numerology-App/static/js/main.d9517dbf.chunk.js",
-    "main.js.map": "/Numerology-App/static/js/main.d9517dbf.chunk.js.map",
+    "main.css": "/Numerology-App/static/css/main.bc0adbe7.chunk.css",
+    "main.js": "/Numerology-App/static/js/main.e0fc327e.chunk.js",
+    "main.js.map": "/Numerology-App/static/js/main.e0fc327e.chunk.js.map",
     "runtime-main.js": "/Numerology-App/static/js/runtime-main.dfcf93eb.js",
     "runtime-main.js.map": "/Numerology-App/static/js/runtime-main.dfcf93eb.js.map",
     "static/css/2.150d169a.chunk.css": "/Numerology-App/static/css/2.150d169a.chunk.css",
@@ -12,14 +12,14 @@
     "static/js/3.f494ae8b.chunk.js.map": "/Numerology-App/static/js/3.f494ae8b.chunk.js.map",
     "index.html": "/Numerology-App/index.html",
     "static/css/2.150d169a.chunk.css.map": "/Numerology-App/static/css/2.150d169a.chunk.css.map",
-    "static/css/main.8eb6e457.chunk.css.map": "/Numerology-App/static/css/main.8eb6e457.chunk.css.map",
+    "static/css/main.bc0adbe7.chunk.css.map": "/Numerology-App/static/css/main.bc0adbe7.chunk.css.map",
     "static/js/2.dbf02e43.chunk.js.LICENSE.txt": "/Numerology-App/static/js/2.dbf02e43.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.dfcf93eb.js",
     "static/css/2.150d169a.chunk.css",
     "static/js/2.dbf02e43.chunk.js",
-    "static/css/main.8eb6e457.chunk.css",
-    "static/js/main.d9517dbf.chunk.js"
+    "static/css/main.bc0adbe7.chunk.css",
+    "static/js/main.e0fc327e.chunk.js"
   ]
 }
