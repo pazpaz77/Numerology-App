@@ -70,7 +70,7 @@ class App extends React.Component {
                   yearForecastData = {this.state.yearForecastData} />
           </Route>
 
-          <Route exact path="https://pazpaz77.github.io/Numerology-App/#/forecast">
+          <Route exact path="https://pazpaz77.github.io/Numerology-App//forecast">
                   <ForecastPage 
                   yearForecastData = {this.state.yearForecastData} 
                   dayForecastData = {this.state.dayForecastData}/>
