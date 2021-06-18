@@ -1,7 +1,8 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import { HashRouter, Route } from 'react-router-dom';
+import { HashRouter, Route, } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import ForecastPage from './pages/ForecastPage';
 import PersonalPage from './pages/PersonalPage';
@@ -59,6 +60,7 @@ class App extends React.Component {
     </Navbar.Collapse>
     </Navbar>
     <Container className="app-container">
+      <switch>
           <Route exact path="/">
                   <HomePage 
                   yearForecastData = {this.state.yearForecastData} 
@@ -87,7 +89,8 @@ class App extends React.Component {
           <Route exact path="/login">
                   <LoginPage />
           </Route>  */}
-          
+
+        </switch>
       </Container>
     </HashRouter>
 
