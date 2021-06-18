@@ -7,7 +7,7 @@ import ForecastPage from './pages/ForecastPage';
 import PersonalPage from './pages/PersonalPage';
 import SignupPage from './pages/SignupPage';
 import LoginPage from './pages/LoginPage';
-import { Container, Nav, Navbar } from 'react-bootstrap';
+import { Container, Nav, Navbar} from 'react-bootstrap';
 import yearForecastData from './data/Personalyear.js';
 import dayForecastData from './data/PersonalDay.js';
 import lifePathData from './data/LifePath.js';
@@ -50,9 +50,9 @@ class App extends React.Component {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link href="/#/">Home</Nav.Link>
-            <Nav.Link href="/#/forecast">Personal Numerology Forecasts</Nav.Link>
-            <Nav.Link href="/#/birthdayCard">Create a Birthday Card</Nav.Link>
+            <Nav.Link href="Numerology-App/#/">Home</Nav.Link>
+            <Nav.Link href="Numerology-App/#/forecast">Personal Numerology Forecasts</Nav.Link>
+            <Nav.Link href="Numerology-App/#/birthdayCard">Create a Birthday Card</Nav.Link>
 
           </Nav>
     
