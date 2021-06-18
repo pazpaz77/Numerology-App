@@ -33,10 +33,10 @@ class App extends React.Component {
   return (
    
     
-    <HashRouter>
-      
+    <HashRouter basename="/Numerology-App">
+
     
-      <Navbar bg="dark" variant="dark" expand="lg">
+        <Navbar bg="dark" variant="dark" expand="lg">
         <Navbar.Brand>
         <img
         src="https://c0.klipartz.com/pngpicture/273/404/gratis-png-plantilla-de-cara-de-reloj-plantillas-de-reloj.png"
@@ -50,9 +50,9 @@ class App extends React.Component {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link href="https://pazpaz77.github.io/Numerology-App/#/">Home</Nav.Link>
-            <Nav.Link href="https://pazpaz77.github.io/Numerology-App/#/forecast">Personal Numerology Forecasts</Nav.Link>
-            <Nav.Link href="https://pazpaz77.github.io/Numerology-App/#/birthdayCard">Create a Birthday Card</Nav.Link>
+            <Nav.Link href="/#/">Home</Nav.Link>
+            <Nav.Link href="/#/forecast">Personal Numerology Forecasts</Nav.Link>
+            <Nav.Link href="/#/birthdayCard">Create a Birthday Card</Nav.Link>
 
           </Nav>
     
@@ -70,7 +70,7 @@ class App extends React.Component {
                   yearForecastData = {this.state.yearForecastData} />
           </Route>
 
-          <Route exact path="https://pazpaz77.github.io/Numerology-App//forecast">
+          <Route exact path="/forecast">
                   <ForecastPage 
                   yearForecastData = {this.state.yearForecastData} 
                   dayForecastData = {this.state.dayForecastData}/>
