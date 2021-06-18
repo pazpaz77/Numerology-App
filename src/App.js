@@ -50,27 +50,27 @@ class App extends React.Component {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link href="Numerology-App/#/">Home</Nav.Link>
-            <Nav.Link href="Numerology-App/#/forecast">Personal Numerology Forecasts</Nav.Link>
-            <Nav.Link href="Numerology-App/#/birthdayCard">Create a Birthday Card</Nav.Link>
+            <Nav.Link href="/#/">Home</Nav.Link>
+            <Nav.Link href="/#/forecast">Personal Numerology Forecasts</Nav.Link>
+            <Nav.Link href="/#/birthdayCard">Create a Birthday Card</Nav.Link>
 
           </Nav>
     
     </Navbar.Collapse>
     </Navbar>
     <Container className="app-container">
-          <Route exact path="/">
+          <Route exact path="Numerology-App/#/">
                   <HomePage 
                   yearForecastData = {this.state.yearForecastData} 
                   lifePathData = {this.state.lifePathData}/>
           </Route>
 
-          <Route exact path="/birthdayCard">
+          <Route exact path="Numerology-App/#/birthdayCard">
                   <BirthdayCardPage 
                   yearForecastData = {this.state.yearForecastData} />
           </Route>
 
-          <Route exact path="/forecast">
+          <Route exact path="Numerology-App/#/forecast">
                   <ForecastPage 
                   yearForecastData = {this.state.yearForecastData} 
                   dayForecastData = {this.state.dayForecastData}/>
