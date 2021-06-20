@@ -33,7 +33,7 @@ class App extends React.Component {
   return (
    
     
-    <HashRouter basename="/">
+    <HashRouter basename="Numerology-App/">
       
     
       <Navbar bg="dark" variant="dark" expand="lg">
