@@ -51,7 +51,7 @@ class App extends React.Component {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
             <Nav.Link href="/#/">Home</Nav.Link>
-            <Nav.Link href="/Numerology-App/#/forecast">Personal Numerology Forecasts</Nav.Link>
+            <Nav.Link href="/#/forecast">Personal Numerology Forecasts</Nav.Link>
             <Nav.Link href="/#/birthdayCard">Create a Birthday Card</Nav.Link>
 
           </Nav>
@@ -71,7 +71,7 @@ class App extends React.Component {
                   yearForecastData = {this.state.yearForecastData} />
           </Route>
 
-          <Route exact path="/forecast">
+          <Route exact path="/Numerology-App/forecast">
                   <ForecastPage 
                   yearForecastData = {this.state.yearForecastData} 
                   dayForecastData = {this.state.dayForecastData}/>
