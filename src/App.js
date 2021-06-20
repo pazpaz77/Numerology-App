@@ -33,7 +33,7 @@ class App extends React.Component {
   return (
    
     
-    <HashRouter basename="/">
+    <HashRouter basename="/Numerology-App/#/">
 
     
         <Navbar bg="dark" variant="dark" expand="lg">
@@ -71,7 +71,7 @@ class App extends React.Component {
                   yearForecastData = {this.state.yearForecastData} />
           </Route>
 
-          <Route exact path="/Numerology-App/forecast">
+          <Route exact path="/forecast">
                   <ForecastPage 
                   yearForecastData = {this.state.yearForecastData} 
                   dayForecastData = {this.state.dayForecastData}/>
