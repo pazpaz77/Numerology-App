@@ -33,9 +33,9 @@ class App extends React.Component {
   return (
    
     
-    // <HashRouter>
+    <HashRouter basename="/">
       
-    <BrowserRouter>
+    
       <Navbar bg="dark" variant="dark" expand="lg">
         <Navbar.Brand>
         <img
@@ -50,9 +50,9 @@ class App extends React.Component {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/forecast">Personal Numerology Forecasts</Nav.Link>
-            <Nav.Link href="/birthdayCard">Create a Birthday Card</Nav.Link>
+            <Nav.Link href="#/">Home</Nav.Link>
+            <Nav.Link href="#/forecast">Personal Numerology Forecasts</Nav.Link>
+            <Nav.Link href="#/birthdayCard">Create a Birthday Card</Nav.Link>
 
           </Nav>
     
@@ -79,8 +79,7 @@ class App extends React.Component {
           
           
       </Container>
-      </BrowserRouter>
-    /* </HashRouter> */
+    </HashRouter>
 
     );
   }
