@@ -2,7 +2,6 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import { HashRouter, Route, } from 'react-router-dom';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import ForecastPage from './pages/ForecastPage';
 import PersonalPage from './pages/PersonalPage';
@@ -52,7 +51,7 @@ class App extends React.Component {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
             <Nav.Link href="/#/">Home</Nav.Link>
-            <Nav.Link href="/#/forecast">Personal Numerology Forecasts</Nav.Link>
+            <Nav.Link href="/Numerology-App/#/forecast">Personal Numerology Forecasts</Nav.Link>
             <Nav.Link href="/#/birthdayCard">Create a Birthday Card</Nav.Link>
 
           </Nav>
