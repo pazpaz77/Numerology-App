@@ -36,28 +36,7 @@ class App extends React.Component {
     <HashRouter>
       
     
-      <Navbar bg="dark" variant="dark" expand="lg">
-        <Navbar.Brand>
-        <img
-        src="https://c0.klipartz.com/pngpicture/273/404/gratis-png-plantilla-de-cara-de-reloj-plantillas-de-reloj.png"
-        width="30"
-        height="30"
-        className="d-inline-block align-top"
-        
-      />  My Numerology
-     
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mr-auto">
-            <Nav.Link href="/Numerology-App/#/">Home</Nav.Link>
-            <Nav.Link href="/Numerology-App/#/forecast">Personal Numerology Forecasts</Nav.Link>
-            <Nav.Link href="/Numerology-App/#/birthdayCard">Create a Birthday Card</Nav.Link>
-
-          </Nav>
-    
-    </Navbar.Collapse>
-    </Navbar>
+      
     <Container className="app-container">
           <Route exact path="/">
                   <HomePage 
@@ -79,6 +58,29 @@ class App extends React.Component {
           
           
       </Container>
+
+      <Navbar bg="dark" variant="dark" expand="lg">
+        <Navbar.Brand>
+        <img
+        src="https://c0.klipartz.com/pngpicture/273/404/gratis-png-plantilla-de-cara-de-reloj-plantillas-de-reloj.png"
+        width="30"
+        height="30"
+        className="d-inline-block align-top"
+        
+      />  My Numerology
+     
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="mr-auto">
+            <Nav.Link href="/#/">Home</Nav.Link>
+            <Nav.Link href="/#/forecast">Personal Numerology Forecasts</Nav.Link>
+            <Nav.Link href="/#/birthdayCard">Create a Birthday Card</Nav.Link>
+
+          </Nav>
+    
+    </Navbar.Collapse>
+    </Navbar>
     </HashRouter>
 
     );
