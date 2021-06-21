@@ -59,7 +59,11 @@ class App extends React.Component {
     </Navbar.Collapse>
     </Navbar>
     <Container className="app-container">
-          
+          <Route exact path="/">
+                  <HomePage 
+                  yearForecastData = {this.state.yearForecastData} 
+                  lifePathData = {this.state.lifePathData}/>
+          </Route>
 
           <Route exact path="/birthdayCard">
                   <BirthdayCardPage 
@@ -72,11 +76,7 @@ class App extends React.Component {
                   dayForecastData = {this.state.dayForecastData}/>
           </Route>
 
-          <Route exact path="/">
-                  <HomePage 
-                  yearForecastData = {this.state.yearForecastData} 
-                  lifePathData = {this.state.lifePathData}/>
-          </Route>
+          
           
       </Container>
     </HashRouter>
